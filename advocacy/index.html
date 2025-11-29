@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advocacy | The Asylum</title>
+  <meta name="description" content="Humane AI philosophy and action. AI should amplify human creativity, not replace human purpose.">
+  
+  <meta property="og:title" content="Advocacy | The Asylum">
+  <meta property="og:description" content="Humane AI philosophy — AI should amplify human creativity, not replace human purpose.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1a0a14">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/typography.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/navigation.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  
+  <style>[x-cloak] { display: none !important; }</style>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header visible" x-data="navigationController()" x-init="init()">
+    <div class="header-inner">
+      <a href="../" class="site-logo">The Asylum</a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="../" class="nav-link">Home</a>
+        <a href="../about/" class="nav-link">About</a>
+        <a href="../resources/" class="nav-link">Library</a>
+        <a href="../advocacy/" class="nav-link" aria-current="page">Advocacy</a>
+        <a href="../projects/" class="nav-link">Projects</a>
+        <a href="../guestbook/" class="nav-link">Guestbook</a>
+        <a href="../links/" class="nav-link">Links</a>
+      </nav>
+      <button class="nav-toggle" @click="toggle()" :aria-expanded="isOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="nav-mobile-backdrop" :class="{ 'visible': isOpen }" @click="close()" x-show="isOpen"></div>
+    <nav id="mobile-nav" class="nav-mobile" :class="{ 'open': isOpen }" aria-label="Mobile navigation" x-show="isOpen">
+      <div class="nav-mobile__header">
+        <span class="nav-mobile__logo">⚜ Menu</span>
+        <button class="nav-mobile__close" @click="close()" aria-label="Close menu">×</button>
+      </div>
+      <div class="nav-mobile__links">
+        <a href="../" class="nav-mobile__link">Home</a>
+        <a href="../about/" class="nav-mobile__link">About</a>
+        <a href="../resources/" class="nav-mobile__link">Library</a>
+        <a href="../advocacy/" class="nav-mobile__link" aria-current="page">Advocacy</a>
+        <a href="../projects/" class="nav-mobile__link">Projects</a>
+        <a href="../guestbook/" class="nav-mobile__link">Guestbook</a>
+        <a href="../links/" class="nav-mobile__link">Links</a>
+      </div>
+    </nav>
+  </header>
+  
+  <main id="main-content" style="padding-top: 100px;">
+    
+    <section class="section">
+      <div class="container" style="text-align: center;">
+        <div style="display: flex; justify-content: center; margin-bottom: var(--space-4);">
+          <svg class="icon--xl icon--gold" aria-hidden="true"><use href="../assets/svg/icons.svg#icon-advocacy"/></svg>
+        </div>
+        <h1 class="text-title" style="margin-bottom: var(--space-2);">The Pulpit</h1>
+        <p class="text-lead">Humane AI Philosophy & Action</p>
+      </div>
+    </section>
+    
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="prose" style="max-width: 800px; margin: 0 auto;">
+          
+          <blockquote class="pull-quote" style="margin-top: 0;">
+            AI should amplify human creativity, not replace human purpose.
+          </blockquote>
+          
+          <h2>The Manifesto</h2>
+          
+          <p class="drop-cap">
+            We stand at a crossroads. Artificial intelligence has arrived not as the distant future we 
+            imagined, but as the present we must navigate. The question is not whether AI will change 
+            everything—it already has. The question is: <em>for whom?</em>
+          </p>
+          
+          <p>
+            I believe in <strong>humane technology</strong>—technology that serves human flourishing rather 
+            than corporate extraction. Technology that creates opportunities rather than eliminates them. 
+            Technology that amplifies what makes us human rather than replacing it.
+          </p>
+          
+          <p>
+            This is not anti-technology. This is pro-human.
+          </p>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Core Beliefs</h2>
+          
+          <ul>
+            <li><strong>AI as amplifier, not replacement.</strong> The best use of AI is to make humans more capable, not to make humans unnecessary.</li>
+            <li><strong>Means of production, not means of extraction.</strong> AI should be a tool that individuals can wield to create value, not a mechanism for corporations to extract value from fewer workers.</li>
+            <li><strong>Creativity remains human.</strong> AI can generate, but humans create. The spark of genuine creativity—the why behind the what—remains irreducibly human.</li>
+            <li><strong>Accessibility over gatekeeping.</strong> AI tools should democratize capability, not concentrate it. A self-taught developer in Salmon, Idaho should have access to the same power as a Stanford graduate in San Francisco.</li>
+            <li><strong>Transparency over opacity.</strong> We should understand how our tools work, what data they use, and who benefits from our interactions with them.</li>
+          </ul>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>AI as Means of Production</h2>
+          
+          <p>
+            There's a narrative being pushed by some in the tech industry: AI will replace workers, and 
+            that's progress. Fewer employees, more efficiency, higher profits. The humans who remain will 
+            manage the machines.
+          </p>
+          
+          <p>
+            I reject this narrative.
+          </p>
+          
+          <p>
+            Instead, I advocate for AI as a <strong>means of production</strong> for individuals. Just as 
+            the printing press didn't eliminate writers but empowered more people to publish, AI should 
+            empower more people to create, build, and contribute.
+          </p>
+          
+          <p>
+            A solo developer with AI assistance can now build what once required a team. A small business 
+            owner can create marketing materials that once required an agency. A student can learn at a 
+            pace and depth that once required expensive tutoring.
+          </p>
+          
+          <p>
+            This is the promise of AI: <strong>not fewer humans doing more, but more humans doing what 
+            was previously impossible.</strong>
+          </p>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Against Job Replacement</h2>
+          
+          <p>
+            When a company announces it's replacing workers with AI, that's not innovation—it's extraction. 
+            It's taking the value that humans created and redirecting it to shareholders while discarding 
+            the humans themselves.
+          </p>
+          
+          <p>
+            True innovation would be:
+          </p>
+          
+          <ul>
+            <li>Using AI to help existing workers do more meaningful work</li>
+            <li>Creating new roles that combine human judgment with AI capability</li>
+            <li>Sharing productivity gains with the workers who made them possible</li>
+            <li>Investing in retraining rather than replacing</li>
+          </ul>
+          
+          <p>
+            The companies that treat AI as a replacement for humans will find themselves with efficient 
+            machines and no soul. The companies that treat AI as an amplifier for humans will find 
+            themselves with empowered workers and genuine innovation.
+          </p>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>What You Can Do</h2>
+          
+          <ul>
+            <li><strong>Learn AI tools yourself.</strong> Don't wait for permission. The <a href="../resources/">Library</a> has free resources to get started.</li>
+            <li><strong>Use AI to create, not just consume.</strong> Build something. Write something. Make something that didn't exist before.</li>
+            <li><strong>Advocate for humane implementation.</strong> When your workplace adopts AI, push for augmentation over replacement.</li>
+            <li><strong>Support human creators.</strong> Value the human element in the work you consume and purchase.</li>
+            <li><strong>Stay critical.</strong> Question narratives that frame human obsolescence as inevitable or desirable.</li>
+          </ul>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Further Reading</h2>
+          
+          <p>These voices have shaped my thinking on humane technology:</p>
+          
+          <ul>
+            <li><a href="https://www.humanetech.com/" target="_blank" rel="noopener noreferrer">Center for Humane Technology</a> — Tristan Harris and team on ethical tech</li>
+            <li><a href="https://www.calnewport.com/" target="_blank" rel="noopener noreferrer">Cal Newport</a> — Deep work and digital minimalism</li>
+            <li><a href="https://www.noemamag.com/" target="_blank" rel="noopener noreferrer">Noema Magazine</a> — Thoughtful essays on technology and society</li>
+          </ul>
+          
+          <p style="text-align: center; margin-top: var(--space-12);">
+            <em>The future is not written. We write it together.</em>
+          </p>
+          
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <p class="footer-logo__text">⚜ The Asylum ⚜</p>
+        <p class="footer-logo__tagline">jeffkazzee.neocities.org</p>
+      </div>
+      <div class="footer-divider"></div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../">Home</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../about/">About</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../resources/">Library</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../links/">Links</a>
+      </nav>
+      <p class="footer-copyright">© 2025 <a href="../about/">Jeff Kazzee</a></p>
+      <p class="footer-made-with">Made with 💀 and vanilla JS</p>
+    </div>
+  </footer>
+  <div class="fog-overlay" aria-hidden="true"></div>
+</body>
+</html>

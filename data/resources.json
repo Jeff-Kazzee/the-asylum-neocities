@@ -1,0 +1,342 @@
+{
+  "categories": [
+    {
+      "id": "education",
+      "name": "Educational Resources",
+      "description": "Where knowledge flows freely.",
+      "icon": "📖"
+    },
+    {
+      "id": "coding",
+      "name": "Coding Tools",
+      "description": "The instruments of creation.",
+      "icon": "⚙️"
+    },
+    {
+      "id": "design",
+      "name": "Design Tools",
+      "description": "From vision to reality.",
+      "icon": "🎨"
+    },
+    {
+      "id": "ui",
+      "name": "UI/CSS Resources",
+      "description": "Components and inspiration.",
+      "icon": "✨"
+    }
+  ],
+  "resources": [
+    {
+      "id": "freecodecamp",
+      "name": "freeCodeCamp Full-Stack Developer v9",
+      "url": "https://www.freecodecamp.org/learn/full-stack-developer-v9/",
+      "description": "The gold standard for free coding education—a revamped 1,800-hour curriculum combining interactive workshops, video lectures, and certification exams.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "anthropic-learn",
+      "name": "Anthropic Learn",
+      "url": "https://www.anthropic.com/learn",
+      "description": "Anthropic's official academy for mastering Claude—from AI Fluency fundamentals to advanced API development and MCP integrations.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "openai-academy",
+      "name": "OpenAI Academy",
+      "url": "https://academy.openai.com/home",
+      "description": "OpenAI's free learning platform with 300+ ready-to-use prompt packs, live workshops, and community-driven resources.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "openai-prompts",
+      "name": "OpenAI Prompt Packs",
+      "url": "https://academy.openai.com/home/tags/prompt-packs-6849a0f98c613939acef841c",
+      "description": "Skip the prompt engineering guesswork—300+ ready-to-use templates organized by profession.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "scrum-guide",
+      "name": "Scrum Guide",
+      "url": "https://scrumguides.org/scrum-guide.html",
+      "description": "The definitive source for Scrum methodology—the complete framework in under 13 pages, available free in 30+ languages.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "philschmid",
+      "name": "philschmid.de",
+      "url": "https://www.philschmid.de/",
+      "description": "Practical AI engineering wisdom from a Google DeepMind staff engineer—hands-on tutorials for fine-tuning LLMs and deploying models.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "hamel-dev",
+      "name": "hamel.dev",
+      "url": "https://hamel.dev/",
+      "description": "Battle-tested AI product development wisdom—insights on LLM evaluation, error analysis, and rapidly improving AI products.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "claudelog",
+      "name": "ClaudeLog",
+      "url": "https://claudelog.com/",
+      "description": "The essential Claude Code companion—community-curated documentation, experiments, and optimization techniques.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "awesome-claude",
+      "name": "Awesome Claude Code",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "description": "The definitive resource collection for Claude Code power users—slash commands, templates, hooks, and workflows. 17,400+ stars.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "ai-template",
+      "name": "AI Template Agents",
+      "url": "https://www.aitmpl.com/agents",
+      "description": "Instant Claude Code superpowers—100+ production-ready agents and 159+ custom commands installable with a single npx command.",
+      "category": "education",
+      "pricing": "free"
+    },
+    {
+      "id": "playbooks",
+      "name": "Playbooks.com",
+      "url": "https://playbooks.com/",
+      "description": "Learn to build real apps using AI tools without coding experience—teaches 'vibe coding' with Cursor and Claude Code.",
+      "category": "education",
+      "pricing": "freemium"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "url": "https://cursor.com/",
+      "description": "The leading AI-first code editor built on VS Code, featuring multi-model support, powerful agentic workflows, and deep AI integration.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "url": "https://zed.dev/",
+      "description": "A lightning-fast, Rust-based code editor with GPU-accelerated performance, real-time multiplayer collaboration, and flexible AI integration.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "theia",
+      "name": "Theia IDE",
+      "url": "https://theia-ide.org/#theiaide",
+      "description": "Fully open-source, AI-native development environment with VS Code extension compatibility—deploy on desktop or cloud.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "neovim",
+      "name": "Neovim",
+      "url": "https://neovim.io/",
+      "description": "The turbocharged evolution of Vim—blazing-fast, Lua-scriptable with built-in LSP support and Tree-sitter syntax highlighting.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "url": "https://aider.chat/",
+      "description": "The leading open-source AI pair programmer in your terminal—maps your codebase, commits changes, works with any LLM.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "amp",
+      "name": "Amp Code",
+      "url": "https://ampcode.com/",
+      "description": "Sourcegraph's unconstrained agentic coding with automatic model selection—use via CLI or VS Code extension.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "factory",
+      "name": "Factory AI",
+      "url": "https://app.factory.ai/",
+      "description": "Specialized 'Droids'—autonomous AI agents for coding, debugging, and incident response across your IDE and CI/CD pipeline.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "warp",
+      "name": "Warp Terminal",
+      "url": "https://www.warp.dev/",
+      "description": "A Rust-built, AI-native terminal with natural language agents, intelligent command suggestions, and shareable workflows.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "blackbox",
+      "name": "Blackbox AI",
+      "url": "https://www.blackbox.ai",
+      "description": "300+ models and autonomous coding agents—generate, debug, translate code, extract from videos, Figma-to-code conversion.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "firebase-studio",
+      "name": "Firebase Studio",
+      "url": "https://studio.firebase.google.com/",
+      "description": "Google's all-in-one cloud workspace—use Gemini to prototype apps from prompts or drawings, code with full IDE features.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "llamacoder",
+      "name": "LlamaCoder",
+      "url": "https://llamacoder.together.ai/",
+      "description": "The free, open-source Claude Artifacts alternative—describe any app and watch Llama 3.1 405B generate a complete React application.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "convex-chef",
+      "name": "Convex Chef",
+      "url": "https://chef.convex.dev/",
+      "description": "The AI app builder that understands backend—create full-stack apps with real-time sync, auth, databases from natural language.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "dyad",
+      "name": "Dyad",
+      "url": "https://academy.dyad.sh/",
+      "description": "The free, local, open-source 'vibe coding' alternative—describe your app in plain English, get clean React code.",
+      "category": "coding",
+      "pricing": "freemium"
+    },
+    {
+      "id": "nimbalyst",
+      "name": "Nimbalyst",
+      "url": "https://nimbalyst.com/",
+      "description": "Innovative WYSIWYG markdown editor that integrates natively with Claude Code—visual diffs and parallel session management.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "codeflicker",
+      "name": "CodeFlicker AI",
+      "url": "https://www.codeflicker.ai/",
+      "description": "AI-native IDE with dual collaboration modes, Figma-to-code conversion, and MCP integration.",
+      "category": "coding",
+      "pricing": "free"
+    },
+    {
+      "id": "google-stitch",
+      "name": "Google Stitch",
+      "url": "https://stitch.withgoogle.com/",
+      "description": "Google's free AI-powered UI generator—transform text prompts or sketches into polished interface designs with exportable code.",
+      "category": "design",
+      "pricing": "free"
+    },
+    {
+      "id": "magic-patterns",
+      "name": "Magic Patterns",
+      "url": "https://www.magicpatterns.com/",
+      "description": "AI-powered prototyping for product teams—generates matching UI components and exports production-ready React/Tailwind code.",
+      "category": "design",
+      "pricing": "freemium"
+    },
+    {
+      "id": "aura-build",
+      "name": "Aura Build",
+      "url": "https://www.aura.build/",
+      "description": "AI design platform generating stunning web and mobile interfaces from text prompts—800+ templates, export to HTML/Tailwind or Figma.",
+      "category": "design",
+      "pricing": "freemium"
+    },
+    {
+      "id": "uizard",
+      "name": "Uizard",
+      "url": "https://app.uizard.io/",
+      "description": "Turn text prompts, screenshots, or hand-drawn sketches into editable wireframes and interactive prototypes.",
+      "category": "design",
+      "pricing": "freemium"
+    },
+    {
+      "id": "polymet",
+      "name": "Polymet AI",
+      "url": "https://polymet.ai/",
+      "description": "Describe or sketch your idea, receive professional UI designs with production-ready React code using Shadcn components.",
+      "category": "design",
+      "pricing": "freemium"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "url": "https://www.figma.com/",
+      "description": "The collaborative design platform with Figma Make for prompt-to-app prototyping and Sites for website deployment.",
+      "category": "design",
+      "pricing": "freemium"
+    },
+    {
+      "id": "lapa-ninja",
+      "name": "Lapa Ninja",
+      "url": "https://www.lapa.ninja/",
+      "description": "Meticulously curated gallery of 7,200+ real landing page designs with full screenshots and video recordings.",
+      "category": "design",
+      "pricing": "free"
+    },
+    {
+      "id": "shadcn",
+      "name": "shadcn/ui",
+      "url": "https://ui.shadcn.com/",
+      "description": "The modern approach to React UI—copy beautifully designed, accessible components directly into your codebase.",
+      "category": "ui",
+      "pricing": "free"
+    },
+    {
+      "id": "shadcn-svelte",
+      "name": "shadcn-svelte",
+      "url": "https://shadcn-svelte.com/",
+      "description": "The shadcn/ui experience for Svelte—copy accessible, Tailwind-styled components into your SvelteKit projects.",
+      "category": "ui",
+      "pricing": "free"
+    },
+    {
+      "id": "daisyui",
+      "name": "DaisyUI",
+      "url": "https://daisyui.com/",
+      "description": "The missing semantic layer for Tailwind CSS—write 'btn' instead of dozens of utility classes, with 30+ themes.",
+      "category": "ui",
+      "pricing": "free"
+    },
+    {
+      "id": "uiverse",
+      "name": "UIverse",
+      "url": "https://uiverse.io/",
+      "description": "Community-built collection of 4,100+ free CSS and Tailwind UI elements—copy-paste buttons, cards, loaders with animations.",
+      "category": "ui",
+      "pricing": "free"
+    },
+    {
+      "id": "google-fonts",
+      "name": "Google Fonts",
+      "url": "https://fonts.google.com/",
+      "description": "Google's free, open-source font library with 1,500+ typefaces—essential for web typography with variable font support.",
+      "category": "ui",
+      "pricing": "free"
+    },
+    {
+      "id": "site-of-sites",
+      "name": "Site of Sites",
+      "url": "https://www.siteofsites.co/",
+      "description": "Thoughtfully curated gallery of exceptional web design organized by style, industry, and platform.",
+      "category": "ui",
+      "pricing": "free"
+    }
+  ]
+}

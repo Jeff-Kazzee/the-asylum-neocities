@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost in the Asylum | 404</title>
+  <meta name="description" content="You've wandered into a forgotten corridor. The page you seek does not exist.">
+  <meta name="theme-color" content="#1a0a14">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  
+  <style>[x-cloak] { display: none !important; }</style>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-8);
+    }
+    .error-content {
+      max-width: 600px;
+    }
+    .error-code {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 20vw, 12rem);
+      color: var(--spectral-gold);
+      line-height: 1;
+      text-shadow: 0 0 30px var(--glow-gold);
+      margin-bottom: var(--space-4);
+    }
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-4);
+    }
+    .error-message {
+      color: var(--aged-paper);
+      margin-bottom: var(--space-8);
+      line-height: var(--leading-relaxed);
+    }
+    .error-ghost {
+      font-size: 4rem;
+      margin-bottom: var(--space-6);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header visible" x-data="navigationController()" x-init="init()">
+    <div class="header-inner">
+      <a href="/" class="site-logo">The Asylum</a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="about/" class="nav-link">About</a>
+        <a href="resources/" class="nav-link">Library</a>
+        <a href="advocacy/" class="nav-link">Advocacy</a>
+        <a href="projects/" class="nav-link">Projects</a>
+        <a href="guestbook/" class="nav-link">Guestbook</a>
+        <a href="links/" class="nav-link">Links</a>
+      </nav>
+      <button class="nav-toggle" @click="toggle()" :aria-expanded="isOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="nav-mobile-backdrop" :class="{ 'visible': isOpen }" @click="close()" x-show="isOpen"></div>
+    <nav id="mobile-nav" class="nav-mobile" :class="{ 'open': isOpen }" aria-label="Mobile navigation" x-show="isOpen">
+      <div class="nav-mobile__header">
+        <span class="nav-mobile__logo">⚜ Menu</span>
+        <button class="nav-mobile__close" @click="close()" aria-label="Close menu">×</button>
+      </div>
+      <div class="nav-mobile__links">
+        <a href="/" class="nav-mobile__link">Home</a>
+        <a href="about/" class="nav-mobile__link">About</a>
+        <a href="resources/" class="nav-mobile__link">Library</a>
+        <a href="advocacy/" class="nav-mobile__link">Advocacy</a>
+        <a href="projects/" class="nav-mobile__link">Projects</a>
+        <a href="guestbook/" class="nav-mobile__link">Guestbook</a>
+        <a href="links/" class="nav-mobile__link">Links</a>
+      </div>
+    </nav>
+  </header>
+  
+  <main id="main-content" class="error-page">
+    <div class="error-content">
+      <div class="error-ghost" aria-hidden="true">👻</div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Lost in the Asylum</h1>
+      <p class="error-message">
+        You've wandered into a forgotten corridor. The page you seek has either 
+        moved on to the spirit realm or never existed at all. The ghosts here 
+        don't recognize this path.
+      </p>
+      <a href="/" class="btn-primary">Return to the Gates →</a>
+      
+      <div style="margin-top: var(--space-12);">
+        <p class="text-small" style="color: var(--faded-script);">Perhaps you were looking for:</p>
+        <nav style="margin-top: var(--space-4); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4);">
+          <a href="resources/" style="color: var(--spectral-gold);">The Library</a>
+          <a href="about/" style="color: var(--spectral-gold);">About</a>
+          <a href="projects/" style="color: var(--spectral-gold);">Projects</a>
+        </nav>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <p class="footer-logo__text">⚜ The Asylum ⚜</p>
+        <p class="footer-logo__tagline">jeffkazzee.neocities.org</p>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">© 2025 <a href="about/">Jeff Kazzee</a></p>
+      <p class="footer-made-with">Made with 💀 and vanilla JS</p>
+    </div>
+  </footer>
+  <div class="fog-overlay" aria-hidden="true"></div>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links | The Asylum</title>
+  <meta name="description" content="The Catacombs — webrings, friend sites, and 88x31 buttons. Connections across the indie web.">
+  
+  <meta property="og:title" content="Links | The Asylum">
+  <meta property="og:description" content="Webrings, friend sites, and 88x31 buttons — connections across the indie web.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1a0a14">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/typography.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/navigation.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  
+  <style>[x-cloak] { display: none !important; }</style>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  
+  <style>
+    .links-section {
+      max-width: 900px;
+      margin: 0 auto var(--space-12);
+    }
+    .links-section__header {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    .webring-card {
+      background: var(--weathered-stone);
+      border: 1px solid var(--iron-dark);
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      margin-bottom: var(--space-4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .webring-card__info {
+      flex: 1;
+      min-width: 200px;
+    }
+    .webring-card__name {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-1);
+    }
+    .webring-card__description {
+      color: var(--aged-paper);
+      font-size: var(--text-sm);
+    }
+    .webring-card__nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .webring-card__nav a {
+      color: var(--spectral-gold);
+      font-size: var(--text-xl);
+      transition: color var(--transition-fast), transform var(--transition-fast);
+    }
+    .webring-card__nav a:hover {
+      color: var(--candle-flame);
+      transform: scale(1.2);
+    }
+    .buttons-section {
+      background: var(--fog-white);
+      border: 1px solid var(--iron-dark);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      text-align: center;
+    }
+    .buttons-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-top: var(--space-6);
+    }
+    .buttons-grid img {
+      width: 88px;
+      height: 31px;
+      image-rendering: pixelated;
+      border: 1px solid var(--iron-dark);
+      transition: all var(--transition-fast);
+    }
+    .buttons-grid a:hover img {
+      border-color: var(--spectral-gold);
+      box-shadow: 0 0 10px var(--glow-gold);
+    }
+    .my-button {
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      background: var(--weathered-stone);
+      border: 1px solid var(--iron-dark);
+      border-radius: var(--radius-md);
+    }
+    .my-button__preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .my-button__code {
+      background: var(--void-black);
+      padding: var(--space-4);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--aged-paper);
+      overflow-x: auto;
+      margin-top: var(--space-4);
+    }
+    .friends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--space-4);
+    }
+    .friend-card {
+      background: var(--weathered-stone);
+      border: 1px solid var(--iron-dark);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      transition: all var(--transition-fast);
+    }
+    .friend-card:hover {
+      border-color: var(--spectral-gold);
+      transform: translateY(-2px);
+    }
+    .friend-card__name {
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-1);
+    }
+    .friend-card__description {
+      color: var(--aged-paper);
+      font-size: var(--text-sm);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header visible" x-data="navigationController()" x-init="init()">
+    <div class="header-inner">
+      <a href="../" class="site-logo">The Asylum</a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="../" class="nav-link">Home</a>
+        <a href="../about/" class="nav-link">About</a>
+        <a href="../resources/" class="nav-link">Library</a>
+        <a href="../advocacy/" class="nav-link">Advocacy</a>
+        <a href="../projects/" class="nav-link">Projects</a>
+        <a href="../guestbook/" class="nav-link">Guestbook</a>
+        <a href="../links/" class="nav-link" aria-current="page">Links</a>
+      </nav>
+      <button class="nav-toggle" @click="toggle()" :aria-expanded="isOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="nav-mobile-backdrop" :class="{ 'visible': isOpen }" @click="close()" x-show="isOpen"></div>
+    <nav id="mobile-nav" class="nav-mobile" :class="{ 'open': isOpen }" aria-label="Mobile navigation" x-show="isOpen">
+      <div class="nav-mobile__header">
+        <span class="nav-mobile__logo">⚜ Menu</span>
+        <button class="nav-mobile__close" @click="close()" aria-label="Close menu">×</button>
+      </div>
+      <div class="nav-mobile__links">
+        <a href="../" class="nav-mobile__link">Home</a>
+        <a href="../about/" class="nav-mobile__link">About</a>
+        <a href="../resources/" class="nav-mobile__link">Library</a>
+        <a href="../advocacy/" class="nav-mobile__link">Advocacy</a>
+        <a href="../projects/" class="nav-mobile__link">Projects</a>
+        <a href="../guestbook/" class="nav-mobile__link">Guestbook</a>
+        <a href="../links/" class="nav-mobile__link" aria-current="page">Links</a>
+      </div>
+    </nav>
+  </header>
+  
+  <main id="main-content" style="padding-top: 100px;">
+    
+    <section class="section">
+      <div class="container" style="text-align: center;">
+        <div style="display: flex; justify-content: center; margin-bottom: var(--space-4);">
+          <svg class="icon--xl icon--gold" aria-hidden="true"><use href="../assets/svg/icons.svg#icon-links"/></svg>
+        </div>
+        <h1 class="text-title" style="margin-bottom: var(--space-2);">The Catacombs</h1>
+        <p class="text-lead">Connections Across the Indie Web</p>
+        <div style="max-width: 600px; margin: var(--space-6) auto 0; padding: var(--space-4); background: var(--fog-white); border: 1px solid var(--iron-dark); border-radius: var(--radius-md);">
+          <p class="text-body">Webrings, friend sites, and 88x31 buttons — the connective tissue of the personal web.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        
+        <!-- Webrings -->
+        <div class="links-section">
+          <div class="links-section__header">
+            <h2 class="text-section">🌙 Webrings</h2>
+            <p class="text-small">Circular journeys through like-minded sites</p>
+          </div>
+          
+          <div class="webring-card">
+            <div class="webring-card__info">
+              <h3 class="webring-card__name">Neocities Webring</h3>
+              <p class="webring-card__description">A ring of personal sites hosted on Neocities</p>
+            </div>
+            <nav class="webring-card__nav" aria-label="Neocities webring navigation">
+              <a href="#" title="Previous site">←</a>
+              <span style="color: var(--faded-script);">•</span>
+              <a href="#" title="Next site">→</a>
+            </nav>
+          </div>
+          
+          <p class="text-small" style="text-align: center; color: var(--faded-script); margin-top: var(--space-4);">
+            <em>More webrings coming soon as I join communities...</em>
+          </p>
+        </div>
+        
+        <div class="divider-ornate">
+          <span class="divider-ornate__icon">⚜</span>
+        </div>
+        
+        <!-- 88x31 Buttons -->
+        <div class="links-section">
+          <div class="links-section__header">
+            <h2 class="text-section">📟 88x31 Buttons</h2>
+            <p class="text-small">The beloved tradition of the old web</p>
+          </div>
+          
+          <div class="buttons-section">
+            <p class="text-body">Sites I admire, tools I use, and communities I'm part of.</p>
+            
+            <div class="buttons-grid">
+              <a href="https://neocities.org" target="_blank" rel="noopener noreferrer" title="Neocities">
+                <img src="https://neocities.org/img/neocitieslogo.svg" alt="Neocities" style="background: #222; padding: 4px;">
+              </a>
+              <!-- Add more 88x31 buttons here -->
+            </div>
+            
+            <p class="text-small" style="margin-top: var(--space-6); color: var(--faded-script);">
+              <em>Collection growing as I discover more corners of the web...</em>
+            </p>
+          </div>
+          
+          <!-- My Button -->
+          <div class="my-button">
+            <h3 class="text-heading" style="text-align: center; margin-bottom: var(--space-4);">Link to The Asylum</h3>
+            <p class="text-small" style="text-align: center; margin-bottom: var(--space-4);">
+              Want to link to this site? Use this button!
+            </p>
+            <div class="my-button__preview">
+              <div style="background: var(--iron-dark); padding: var(--space-2); border-radius: var(--radius-sm);">
+                <!-- Placeholder for 88x31 button -->
+                <div style="width: 88px; height: 31px; background: var(--deep-aubergine); border: 1px solid var(--spectral-gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 8px; color: var(--spectral-gold);">
+                  THE ASYLUM
+                </div>
+              </div>
+            </div>
+            <div class="my-button__code">
+              <code>&lt;a href="https://jeffkazzee.neocities.org"&gt;&lt;img src="button.gif" alt="The Asylum"&gt;&lt;/a&gt;</code>
+            </div>
+            <p class="text-small" style="text-align: center; margin-top: var(--space-4); color: var(--faded-script);">
+              <em>Custom 88x31 button coming soon!</em>
+            </p>
+          </div>
+        </div>
+        
+        <div class="divider-ornate">
+          <span class="divider-ornate__icon">⚜</span>
+        </div>
+        
+        <!-- Friends / Blogroll -->
+        <div class="links-section">
+          <div class="links-section__header">
+            <h2 class="text-section">👻 Friends & Allies</h2>
+            <p class="text-small">Sites worth visiting</p>
+          </div>
+          
+          <div class="friends-grid">
+            <a href="https://sadgrl.online" target="_blank" rel="noopener noreferrer" class="friend-card">
+              <h3 class="friend-card__name">sadgrl.online</h3>
+              <p class="friend-card__description">Indie web tutorials and resources</p>
+            </a>
+            
+            <a href="https://neocities.org/browse" target="_blank" rel="noopener noreferrer" class="friend-card">
+              <h3 class="friend-card__name">Neocities Browse</h3>
+              <p class="friend-card__description">Discover personal sites</p>
+            </a>
+            
+            <a href="https://indieweb.org" target="_blank" rel="noopener noreferrer" class="friend-card">
+              <h3 class="friend-card__name">IndieWeb</h3>
+              <p class="friend-card__description">People-focused web movement</p>
+            </a>
+          </div>
+          
+          <p class="text-small" style="text-align: center; color: var(--faded-script); margin-top: var(--space-6);">
+            <em>Want to be listed here? <a href="../guestbook/">Sign the guestbook</a> and let me know!</em>
+          </p>
+        </div>
+        
+      </div>
+    </section>
+    
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <p class="footer-logo__text">⚜ The Asylum ⚜</p>
+        <p class="footer-logo__tagline">jeffkazzee.neocities.org</p>
+      </div>
+      <div class="footer-divider"></div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../">Home</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../about/">About</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../resources/">Library</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../links/">Links</a>
+      </nav>
+      <p class="footer-copyright">© 2025 <a href="../about/">Jeff Kazzee</a></p>
+      <p class="footer-made-with">Made with 💀 and vanilla JS</p>
+    </div>
+  </footer>
+  <div class="fog-overlay" aria-hidden="true"></div>
+</body>
+</html>

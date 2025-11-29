@@ -1,0 +1,306 @@
+/* ============================================
+   THE ASYLUM — Typography
+   Font declarations and text styles
+   ============================================ */
+
+/* === FONT FACE DECLARATIONS === */
+/* Using Google Fonts CDN for now - can be self-hosted later for performance */
+
+/* Cinzel Decorative - Display headings */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/cinzeldecorative/v16/daaCSScvJGqLYhG8nNt8KPPswUAPni7TTMw.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/cinzeldecorative/v16/daaHSScvJGqLYhG8nNt8KPPswUAPniZoaelDQzA.woff2') format('woff2');
+}
+
+/* Cinzel - Section headings */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnTYrvDE5ZdqU.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-jTgTYrvDE5ZdqU.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-gzgTYrvDE5ZdqU.woff2') format('woff2');
+}
+
+/* Crimson Pro - Body text */
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/crimsonpro/v24/q5uUsoa5M_tv7IihmnkabC5XiXCAlXGks1WZzm1MP5s7dtC4yZNE.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/crimsonpro/v24/q5uSsoa5M_tv7IihmnkabAReu49Y_Bo-HVKMBi4Ue5s7dtC4yZNE.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/crimsonpro/v24/q5uUsoa5M_tv7IihmnkabC5XiXCAlXGks1WZkmuMP5s7dtC4yZNE.woff2') format('woff2');
+}
+
+/* JetBrains Mono - Code */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxjPVmUsaaDhw.woff2') format('woff2');
+}
+
+/* UnifrakturMaguntia - Gothic accent (sparingly) */
+@font-face {
+  font-family: 'UnifrakturMaguntia';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/unifrakturmaguntia/v20/WWXPlieVYwiGNomYU-ciRLRvEmK7oaVemGZM.woff2') format('woff2');
+}
+
+/* === TYPOGRAPHY UTILITY CLASSES === */
+
+/* Display - Hero titles only */
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 400;
+  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+/* Page titles */
+.text-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Section headers */
+.text-section {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* Card titles, subsections */
+.text-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+}
+
+/* Body copy */
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+}
+
+/* Lead paragraph */
+.text-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  color: var(--aged-paper);
+}
+
+/* Small text, captions */
+.text-small {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--aged-paper);
+}
+
+/* Extra small */
+.text-xs {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--faded-script);
+}
+
+/* Code */
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+/* Gothic accent - USE SPARINGLY */
+.text-gothic {
+  font-family: var(--font-accent);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+}
+
+/* Muted text */
+.text-muted {
+  color: var(--faded-script);
+}
+
+/* Highlighted text */
+.text-highlight {
+  color: var(--spectral-gold);
+}
+
+/* === DROP CAP === */
+.drop-cap::first-letter {
+  font-family: var(--font-accent);
+  font-size: 4em;
+  float: left;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  color: var(--spectral-gold);
+  text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+/* === PROSE STYLING === */
+.prose {
+  max-width: var(--max-width-prose);
+}
+
+.prose p {
+  margin-bottom: var(--space-4);
+}
+
+.prose p + p {
+  text-indent: var(--space-6);
+}
+
+.prose h2 {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+}
+
+.prose h3 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.prose li {
+  margin-bottom: var(--space-2);
+}
+
+.prose ul li::before {
+  content: '⚜';
+  display: inline-block;
+  width: var(--space-6);
+  margin-left: calc(var(--space-6) * -1);
+  color: var(--spectral-gold);
+  font-size: var(--text-sm);
+}
+
+.prose blockquote {
+  margin-block: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  border-left: 3px solid var(--spectral-gold);
+  background: var(--fog-white);
+  font-style: italic;
+}
+
+.prose blockquote cite {
+  display: block;
+  margin-top: var(--space-2);
+  font-style: normal;
+  font-size: var(--text-sm);
+  color: var(--faded-script);
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.1em 0.3em;
+  background: var(--weathered-stone);
+  border-radius: var(--radius-sm);
+}
+
+.prose pre {
+  margin-block: var(--space-6);
+  padding: var(--space-4);
+  background: var(--void-black);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+}
+
+/* === LINK STYLES === */
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--spectral-gold);
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--candle-flame);
+}
+
+/* External link indicator */
+a[target="_blank"]::after {
+  content: ' ↗';
+  font-size: 0.8em;
+  opacity: 0.7;
+}

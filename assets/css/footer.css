@@ -1,0 +1,189 @@
+/* ============================================
+   THE ASYLUM — Footer Styles
+   Site footer with 88x31 buttons and links
+   ============================================ */
+
+/* === FOOTER === */
+
+.site-footer {
+  margin-top: var(--section-gap);
+  padding: var(--space-12) var(--content-padding);
+  background: var(--void-black);
+  border-top: 1px solid var(--iron-dark);
+}
+
+.footer-inner {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* === FOOTER LOGO === */
+
+.footer-logo {
+  margin-bottom: var(--space-4);
+}
+
+.footer-logo__text {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--spectral-gold);
+  letter-spacing: var(--tracking-wider);
+}
+
+.footer-logo__tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--faded-script);
+  margin-top: var(--space-2);
+}
+
+/* === FOOTER DIVIDER === */
+
+.footer-divider {
+  width: 100%;
+  max-width: 400px;
+  height: 1px;
+  margin: var(--space-8) auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--iron-light),
+    transparent
+  );
+}
+
+/* === 88x31 BUTTONS === */
+
+.footer-buttons {
+  margin-bottom: var(--space-8);
+}
+
+.footer-buttons__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--faded-script);
+  margin-bottom: var(--space-4);
+}
+
+.footer-buttons__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.footer-buttons__grid img {
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
+  border: 1px solid var(--iron-dark);
+  transition: all var(--transition-fast);
+}
+
+.footer-buttons__grid a:hover img {
+  border-color: var(--spectral-gold);
+  box-shadow: 0 0 8px var(--glow-gold);
+}
+
+/* === FOOTER LINKS === */
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.footer-links a {
+  color: var(--aged-paper);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--spectral-gold);
+}
+
+.footer-links__separator {
+  color: var(--iron-light);
+}
+
+/* === WEBRING === */
+
+.footer-webring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding: var(--space-4);
+  background: var(--fog-white);
+  border-radius: var(--radius-md);
+}
+
+.footer-webring__nav {
+  color: var(--spectral-gold);
+  text-decoration: none;
+  font-size: var(--text-lg);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-webring__nav:hover {
+  color: var(--candle-flame);
+  transform: scale(1.2);
+}
+
+.footer-webring__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--aged-paper);
+}
+
+/* === COPYRIGHT === */
+
+.footer-copyright {
+  font-size: var(--text-sm);
+  color: var(--faded-script);
+}
+
+.footer-copyright a {
+  color: var(--aged-paper);
+}
+
+.footer-copyright a:hover {
+  color: var(--spectral-gold);
+}
+
+.footer-made-with {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--faded-script);
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-links__separator {
+    display: none;
+  }
+
+  .footer-webring {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-*
+
+# Logs
+*.log
+
+# Documentation (keep local, not needed for deployment)
+*.md
+!README.md
+
+# Temporary files
+*.tmp
+*.temp

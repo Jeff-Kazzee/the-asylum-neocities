@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Asylum | A Digital Sanctuary for Code, Creativity, and Humane Technology</title>
+  <meta name="description" content="Welcome to The Asylum — Jeff Kazzee's digital sanctuary where technology serves humanity. Curated resources, humane AI advocacy, and creative projects.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Asylum | Jeff Kazzee">
+  <meta property="og:description" content="A digital sanctuary for code, creativity, and humane technology.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jeffkazzee.neocities.org/">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1a0a14">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/gate.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  
+  <!-- Alpine.js Cloak (prevent FOUC) -->
+  <style>[x-cloak] { display: none !important; }</style>
+  
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- Site Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gate.js"></script>
+  <script src="assets/js/navigation.js"></script>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- ============================================
+       GATE ANIMATION
+       ============================================ -->
+  <div 
+    class="gate-container" 
+    x-data="gateController()" 
+    x-init="init()"
+    :data-state="state"
+    x-cloak
+  >
+    <!-- Particles -->
+    <div class="gate-particles" aria-hidden="true">
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+      <div class="gate-particle"></div>
+    </div>
+    
+    <!-- Fog Layer -->
+    <div class="gate-fog" aria-hidden="true"></div>
+    
+    <!-- Gates -->
+    <div class="gates-wrapper" :class="{ 'visible': gatesVisible, 'revealing': gatesVisible }">
+      <!-- Left Gate -->
+      <div class="gate gate--left" :class="{ 'opening': gatesOpening }">
+        <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Gate Frame -->
+          <rect x="5" y="5" width="190" height="390" class="gate-frame" rx="5"/>
+          
+          <!-- Vertical Bars -->
+          <rect x="20" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="45" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="70" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="95" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="120" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="145" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="170" y="40" width="8" height="320" class="gate-bar"/>
+          
+          <!-- Horizontal Bars -->
+          <rect x="15" y="35" width="170" height="6" class="gate-bar"/>
+          <rect x="15" y="180" width="170" height="6" class="gate-bar"/>
+          <rect x="15" y="355" width="170" height="6" class="gate-bar"/>
+          
+          <!-- Top Ornament -->
+          <path d="M100 10 L120 25 L100 40 L80 25 Z" class="gate-ornament"/>
+          <circle cx="100" cy="25" r="8" class="gate-ornament"/>
+          
+          <!-- Decorative Scrollwork -->
+          <path d="M30 60 Q50 80 70 60 Q90 80 110 60" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.6"/>
+          <path d="M90 60 Q110 80 130 60 Q150 80 170 60" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+      
+      <!-- Right Gate -->
+      <div class="gate gate--right" :class="{ 'opening': gatesOpening }">
+        <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Gate Frame -->
+          <rect x="5" y="5" width="190" height="390" class="gate-frame" rx="5"/>
+          
+          <!-- Vertical Bars -->
+          <rect x="22" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="47" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="72" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="97" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="122" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="147" y="40" width="8" height="320" class="gate-bar"/>
+          <rect x="172" y="40" width="8" height="320" class="gate-bar"/>
+          
+          <!-- Horizontal Bars -->
+          <rect x="15" y="35" width="170" height="6" class="gate-bar"/>
+          <rect x="15" y="180" width="170" height="6" class="gate-bar"/>
+          <rect x="15" y="355" width="170" height="6" class="gate-bar"/>
+          
+          <!-- Top Ornament -->
+          <path d="M100 10 L120 25 L100 40 L80 25 Z" class="gate-ornament"/>
+          <circle cx="100" cy="25" r="8" class="gate-ornament"/>
+          
+          <!-- Decorative Scrollwork -->
+          <path d="M30 60 Q50 80 70 60 Q90 80 110 60" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.6"/>
+          <path d="M90 60 Q110 80 130 60 Q150 80 170 60" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Welcome Text -->
+    <div class="gate-welcome" :class="{ 'visible': welcomeVisible }">
+      <h1 class="gate-welcome__text" :class="{ 'typing': welcomeTyping }">Welcome to the Asylum</h1>
+    </div>
+    
+    <!-- Skip Button -->
+    <button 
+      class="gate-skip" 
+      :class="{ 'visible': showSkip }"
+      @click="skip()"
+      aria-label="Skip entrance animation"
+    >
+      Skip <span aria-hidden="true">→</span>
+    </button>
+  </div>
+  
+  <!-- ============================================
+       HEADER / NAVIGATION
+       ============================================ -->
+  <header class="site-header" x-data="navigationController()" x-init="init()">
+    <div class="header-inner">
+      <a href="/" class="site-logo">The Asylum</a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="/" class="nav-link" aria-current="page">Home</a>
+        <a href="about/" class="nav-link">About</a>
+        <a href="resources/" class="nav-link">Library</a>
+        <a href="advocacy/" class="nav-link">Advocacy</a>
+        <a href="projects/" class="nav-link">Projects</a>
+        <a href="guestbook/" class="nav-link">Guestbook</a>
+        <a href="links/" class="nav-link">Links</a>
+      </nav>
+      
+      <!-- Mobile Menu Toggle -->
+      <button 
+        class="nav-toggle" 
+        @click="toggle()" 
+        :aria-expanded="isOpen"
+        aria-controls="mobile-nav"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation Backdrop -->
+    <div 
+      class="nav-mobile-backdrop" 
+      :class="{ 'visible': isOpen }"
+      @click="close()"
+      x-show="isOpen"
+      x-transition:enter="transition-opacity"
+      x-transition:leave="transition-opacity"
+    ></div>
+    
+    <!-- Mobile Navigation -->
+    <nav 
+      id="mobile-nav"
+      class="nav-mobile" 
+      :class="{ 'open': isOpen }"
+      aria-label="Mobile navigation"
+      x-show="isOpen"
+    >
+      <div class="nav-mobile__header">
+        <span class="nav-mobile__logo">⚜ Menu</span>
+        <button class="nav-mobile__close" @click="close()" aria-label="Close menu">×</button>
+      </div>
+      <div class="nav-mobile__links">
+        <a href="/" class="nav-mobile__link" aria-current="page">Home</a>
+        <a href="about/" class="nav-mobile__link">About</a>
+        <a href="resources/" class="nav-mobile__link">Library</a>
+        <a href="advocacy/" class="nav-mobile__link">Advocacy</a>
+        <a href="projects/" class="nav-mobile__link">Projects</a>
+        <a href="guestbook/" class="nav-mobile__link">Guestbook</a>
+        <a href="links/" class="nav-mobile__link">Links</a>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main-content" class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero section">
+      <div class="container" style="text-align: center;">
+        <p class="hero__ornament" aria-hidden="true">⚜ ⚜ ⚜</p>
+        
+        <h1 class="text-display" style="margin-bottom: var(--space-4);">The Asylum</h1>
+        
+        <p class="text-lead" style="max-width: 600px; margin: 0 auto var(--space-8);">
+          A Digital Sanctuary for Code, Creativity, and Humane Technology
+        </p>
+        
+        <div class="hero__intro" style="max-width: 700px; margin: 0 auto; padding: var(--space-6); background: var(--fog-white); border: 1px solid var(--iron-dark); border-radius: var(--radius-md);">
+          <p class="text-body">
+            Step through the gates, weary traveler. Here you'll find tools for creation, 
+            words of advocacy, and perhaps... a kindred spirit in the machine.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Cards -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--3">
+          
+          <!-- About Card -->
+          <article class="card">
+            <svg class="card__icon-svg" aria-hidden="true"><use href="assets/svg/icons.svg#icon-about"/></svg>
+            <h2 class="card__title">About</h2>
+            <p class="card__description">
+              The mind behind the madness. Learn about Jeff Kazzee, the self-taught developer 
+              from Salmon, Idaho, and his philosophy on AI-assisted development and humane technology.
+            </p>
+            <div class="card__footer">
+              <a href="about/" class="btn-ghost">Enter →</a>
+            </div>
+          </article>
+          
+          <!-- Library Card -->
+          <article class="card">
+            <svg class="card__icon-svg" aria-hidden="true"><use href="assets/svg/icons.svg#icon-library"/></svg>
+            <h2 class="card__title">The Library</h2>
+            <p class="card__description">
+              41+ curated resources for builders. Free learning platforms, AI coding tools, 
+              design generators, and UI inspiration—all personally vetted.
+            </p>
+            <div class="card__footer">
+              <a href="resources/" class="btn-ghost">Enter →</a>
+            </div>
+          </article>
+          
+          <!-- Advocacy Card -->
+          <article class="card">
+            <svg class="card__icon-svg" aria-hidden="true"><use href="assets/svg/icons.svg#icon-advocacy"/></svg>
+            <h2 class="card__title">Advocacy</h2>
+            <p class="card__description">
+              Humane AI philosophy and action. AI should amplify human creativity, 
+              not replace human purpose. Read the manifesto.
+            </p>
+            <div class="card__footer">
+              <a href="advocacy/" class="btn-ghost">Enter →</a>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- Divider -->
+    <div class="divider-ornate container">
+      <span class="divider-ornate__icon">⚜</span>
+    </div>
+    
+    <!-- Featured Project -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-section" style="text-align: center; margin-bottom: var(--space-8);">Latest Project</h2>
+        
+        <article class="card" style="max-width: 800px; margin: 0 auto;">
+          <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
+            <svg class="card__icon-svg" aria-hidden="true" style="flex-shrink: 0;"><use href="assets/svg/icons.svg#icon-projects"/></svg>
+            <div>
+              <h3 class="card__title">The Asylum</h3>
+              <p class="card__description" style="margin-bottom: var(--space-4);">
+                This very website — built from scratch with vanilla HTML, CSS, and JavaScript. 
+                No frameworks, no build tools, just clean code and a whimsygothic aesthetic.
+              </p>
+              <a href="projects/" class="btn-primary">View Project →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Pull Quote -->
+    <section class="section">
+      <div class="container">
+        <blockquote class="pull-quote">
+          AI should amplify human creativity, not replace human purpose.
+          <cite>— Jeff Kazzee</cite>
+        </blockquote>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      
+      <!-- Logo -->
+      <div class="footer-logo">
+        <p class="footer-logo__text">⚜ The Asylum ⚜</p>
+        <p class="footer-logo__tagline">jeffkazzee.neocities.org</p>
+      </div>
+      
+      <p style="color: var(--aged-paper); margin-bottom: var(--space-4);">
+        Built with obsession in Salmon, Idaho<br>
+        <em>"Where technology serves humanity"</em>
+      </p>
+      
+      <nav style="display: flex; justify-content: center; gap: var(--space-6); margin-bottom: var(--space-4);" aria-label="Social links">
+        <a href="mailto:jeffkazzee@gmail.com" title="Email" style="color: var(--aged-paper);">✉️ Email</a>
+        <a href="https://x.com/JeffKazzee" target="_blank" rel="noopener noreferrer" title="X/Twitter" style="color: var(--aged-paper);">𝕏 Twitter</a>
+        <a href="https://www.reddit.com/user/Dear_Custard_2177/" target="_blank" rel="noopener noreferrer" title="Reddit" style="color: var(--aged-paper);">👽 Reddit</a>
+      </nav>
+      
+      <div class="footer-divider"></div>
+      
+      <!-- 88x31 Buttons -->
+      <div class="footer-buttons">
+        <p class="footer-buttons__title">Friends & Allies</p>
+        <div class="footer-buttons__grid">
+          <!-- Placeholder buttons - replace with actual 88x31 buttons -->
+          <a href="https://neocities.org" target="_blank" rel="noopener noreferrer" title="Hosted on Neocities">
+            <img src="https://neocities.org/img/neocitieslogo.svg" alt="Neocities" width="88" height="31" style="background: #222;">
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <!-- Links -->
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="about/">About</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="resources/">Library</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="links/">Links</a>
+      </nav>
+      
+      <!-- Copyright -->
+      <p class="footer-copyright">
+        © 2025 <a href="about/">Jeff Kazzee</a>
+      </p>
+      <p class="footer-made-with">
+        Made with 💀 and vanilla JS
+      </p>
+      
+    </div>
+  </footer>
+  
+  <!-- Fog Overlay -->
+  <div class="fog-overlay" aria-hidden="true"></div>
+  
+  <!-- Main content visibility -->
+  <style>
+    .main-content {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .main-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Hero styling */
+    .hero__ornament {
+      font-size: var(--text-xl);
+      color: var(--spectral-gold);
+      margin-bottom: var(--space-4);
+    }
+  </style>
+  
+</body>
+</html>

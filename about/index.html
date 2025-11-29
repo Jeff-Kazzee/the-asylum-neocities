@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | The Asylum</title>
+  <meta name="description" content="Meet Jeff Kazzee — self-taught developer, humane AI advocate, and the mind behind The Asylum. Based in Salmon, Idaho.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About | The Asylum">
+  <meta property="og:description" content="Meet Jeff Kazzee — self-taught developer and humane AI advocate.">
+  <meta property="og:type" content="website">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1a0a14">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/typography.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/navigation.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  
+  <!-- Alpine.js -->
+  <style>[x-cloak] { display: none !important; }</style>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  
+  <style>
+    .about-portrait {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto var(--space-8);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 3px solid var(--iron-dark);
+      box-shadow: 0 10px 40px var(--shadow-color);
+    }
+    .about-portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .tech-badge {
+      padding: var(--space-2) var(--space-4);
+      background: var(--weathered-stone);
+      border: 1px solid var(--iron-dark);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--aged-paper);
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="site-header visible" x-data="navigationController()" x-init="init()">
+    <div class="header-inner">
+      <a href="../" class="site-logo">The Asylum</a>
+      
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="../" class="nav-link">Home</a>
+        <a href="../about/" class="nav-link" aria-current="page">About</a>
+        <a href="../resources/" class="nav-link">Library</a>
+        <a href="../advocacy/" class="nav-link">Advocacy</a>
+        <a href="../projects/" class="nav-link">Projects</a>
+        <a href="../guestbook/" class="nav-link">Guestbook</a>
+        <a href="../links/" class="nav-link">Links</a>
+      </nav>
+      
+      <button class="nav-toggle" @click="toggle()" :aria-expanded="isOpen" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    
+    <div class="nav-mobile-backdrop" :class="{ 'visible': isOpen }" @click="close()" x-show="isOpen"></div>
+    
+    <nav id="mobile-nav" class="nav-mobile" :class="{ 'open': isOpen }" aria-label="Mobile navigation" x-show="isOpen">
+      <div class="nav-mobile__header">
+        <span class="nav-mobile__logo">⚜ Menu</span>
+        <button class="nav-mobile__close" @click="close()" aria-label="Close menu">×</button>
+      </div>
+      <div class="nav-mobile__links">
+        <a href="../" class="nav-mobile__link">Home</a>
+        <a href="../about/" class="nav-mobile__link" aria-current="page">About</a>
+        <a href="../resources/" class="nav-mobile__link">Library</a>
+        <a href="../advocacy/" class="nav-mobile__link">Advocacy</a>
+        <a href="../projects/" class="nav-mobile__link">Projects</a>
+        <a href="../guestbook/" class="nav-mobile__link">Guestbook</a>
+        <a href="../links/" class="nav-mobile__link">Links</a>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main id="main-content" style="padding-top: 100px;">
+    
+    <!-- Hero -->
+    <section class="section">
+      <div class="container" style="text-align: center;">
+        <h1 class="text-title" style="margin-bottom: var(--space-2);">The Proprietor</h1>
+        <p class="text-lead">The mind behind the madness</p>
+      </div>
+    </section>
+    
+    <!-- Portrait -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <figure class="about-portrait">
+          <img src="../Jeff Kazzee img welcome to the asylum.jpg" alt="Jeff Kazzee in Victorian attire at a desk with antique books and a glowing orb, with a 'Welcome to the Asylum!' sign behind him" loading="lazy">
+        </figure>
+      </div>
+    </section>
+    
+    <!-- About Content -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="about-content prose">
+          
+          <h2>Hello, I'm Jeff</h2>
+          
+          <p class="drop-cap">
+            Welcome to my digital sanctuary. I'm a self-taught developer from Salmon, Idaho—a small town 
+            nestled in the mountains where the pace of life allows for deep thinking and creative exploration. 
+            This site is my corner of the internet, built with obsession and vanilla JavaScript.
+          </p>
+          
+          <p>
+            My journey into technology wasn't traditional. No computer science degree, no bootcamp certificate. 
+            Just curiosity, persistence, and an ever-growing collection of browser tabs. I believe the best 
+            learning happens when you're building something you care about—and I care deeply about making 
+            technology more human.
+          </p>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>The Philosophy</h2>
+          
+          <p>
+            Some call it "vibe coding" when you use AI tools—I just call it <strong>development</strong>. 
+            I pay close attention to detail, learn the fundamentals, and understand what my code actually does. 
+            AI assistants like Claude and Cursor are powerful collaborators, but they don't replace the need 
+            to actually know your craft. They handle repetitive tasks so I can focus on architecture and intent.
+          </p>
+          
+          <p>
+            But I'm not naive about AI's implications. I believe strongly in <strong>humane technology</strong>—the 
+            idea that AI should serve human flourishing, not corporate extraction. It should create jobs, 
+            not eliminate them. It should augment human capability, not replace human purpose.
+          </p>
+          
+          <blockquote>
+            AI should be a means of production for individuals, not a means of replacement by corporations.
+          </blockquote>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Current Focus</h2>
+          
+          <p>
+            Right now, I'm deep in the world of AI-assisted development, exploring how tools like Claude Code 
+            and Cursor can help self-taught developers punch above their weight. I'm also building 
+            <a href="../projects/">The Panic Manual</a>—a project to help people fight back against confusing 
+            financial documents using AI.
+          </p>
+          
+          <p>
+            I spend my days curating resources for fellow learners (check out <a href="../resources/">The Library</a>), 
+            writing about humane AI, and building weird little projects that bring me joy.
+          </p>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Tech Stack</h2>
+          
+          <p>I believe in using the right tool for the job—and sometimes the right tool is the simplest one.</p>
+          
+          <div class="tech-stack">
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Alpine.js</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Claude</span>
+            <span class="tech-badge">Cursor</span>
+            <span class="tech-badge">VS Code</span>
+            <span class="tech-badge">Git</span>
+            <span class="tech-badge">Neocities</span>
+          </div>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Location</h2>
+          
+          <p>
+            <strong>Salmon, Idaho</strong> — Population ~3,000. Surrounded by wilderness, far from tech hubs, 
+            and I wouldn't have it any other way. The indie web doesn't care where you live, and neither 
+            should technology. Some of the best thinking happens in quiet places.
+          </p>
+          
+          <div class="divider-ornate">
+            <span class="divider-ornate__icon">⚜</span>
+          </div>
+          
+          <h2>Get in Touch</h2>
+          
+          <p>
+            The best way to reach me is through the <a href="../guestbook/">Guestbook</a> or drop me an email. 
+            I read every message and love hearing from fellow travelers on the indie web.
+          </p>
+          
+          <ul style="margin: var(--space-6) 0;">
+            <li><strong>Email:</strong> <a href="mailto:jeffkazzee@gmail.com">jeffkazzee@gmail.com</a></li>
+            <li><strong>X/Twitter:</strong> <a href="https://x.com/JeffKazzee" target="_blank" rel="noopener noreferrer">@JeffKazzee</a></li>
+            <li><strong>Reddit:</strong> <a href="https://www.reddit.com/user/Dear_Custard_2177/" target="_blank" rel="noopener noreferrer">u/Dear_Custard_2177</a></li>
+          </ul>
+          
+          <p style="text-align: center; margin-top: var(--space-8);">
+            <a href="../guestbook/" class="btn-primary">Sign the Guestbook →</a>
+          </p>
+          
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <p class="footer-logo__text">⚜ The Asylum ⚜</p>
+        <p class="footer-logo__tagline">jeffkazzee.neocities.org</p>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../">Home</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../about/">About</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../resources/">Library</a>
+        <span class="footer-links__separator" aria-hidden="true">·</span>
+        <a href="../links/">Links</a>
+      </nav>
+      
+      <p class="footer-copyright">© 2025 <a href="../about/">Jeff Kazzee</a></p>
+      <p class="footer-made-with">Made with 💀 and vanilla JS</p>
+    </div>
+  </footer>
+  
+  <div class="fog-overlay" aria-hidden="true"></div>
+</body>
+</html>

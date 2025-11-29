@@ -1,0 +1,287 @@
+/* ============================================
+   THE ASYLUM — Gate Animation Styles
+   The signature entrance experience
+   ============================================ */
+
+/* === GATE CONTAINER === */
+
+.gate-container {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-gate);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--void-black);
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.gate-container[data-state="complete"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* === SKIP BUTTON === */
+
+.gate-skip {
+  position: absolute;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--faded-script);
+  background: transparent;
+  border: 1px solid var(--iron-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.gate-skip.visible {
+  opacity: 1;
+}
+
+.gate-skip:hover {
+  color: var(--bone-white);
+  border-color: var(--spectral-gold);
+}
+
+.gate-skip:focus-visible {
+  outline: 2px solid var(--spectral-gold);
+  outline-offset: 4px;
+}
+
+/* === GATES WRAPPER === */
+
+.gates-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 70vh;
+  max-height: 600px;
+  perspective: 1500px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.gates-wrapper.visible {
+  opacity: 1;
+}
+
+/* === INDIVIDUAL GATES === */
+
+.gate {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.gate--left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.gate--right {
+  right: 0;
+  transform-origin: right center;
+}
+
+/* Gate SVG styling */
+.gate svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gate-bar {
+  fill: var(--iron-dark);
+  stroke: var(--iron-light);
+  stroke-width: 1;
+}
+
+.gate-ornament {
+  fill: var(--spectral-gold);
+  opacity: 0.8;
+}
+
+.gate-frame {
+  fill: none;
+  stroke: var(--iron-light);
+  stroke-width: 3;
+}
+
+/* === GATE ANIMATION STATES === */
+
+@media (prefers-reduced-motion: no-preference) {
+  .gate--left.opening {
+    animation: gate-left-open 1.5s ease-out forwards;
+  }
+
+  .gate--right.opening {
+    animation: gate-right-open 1.5s ease-out forwards;
+  }
+
+  .gates-wrapper.revealing {
+    animation: gate-fade-in 1s ease forwards;
+  }
+}
+
+/* Reduced motion: instant open */
+@media (prefers-reduced-motion: reduce) {
+  .gate--left.opening {
+    transform: perspective(1000px) rotateY(-110deg);
+  }
+
+  .gate--right.opening {
+    transform: perspective(1000px) rotateY(110deg);
+  }
+}
+
+/* === WELCOME TEXT === */
+
+.gate-welcome {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gate-welcome.visible {
+  opacity: 1;
+}
+
+.gate-welcome__text {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--bone-white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--spectral-gold);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gate-welcome__text.typing {
+    width: 0;
+    animation: 
+      typewriter 1.5s steps(22) forwards,
+      blink-caret 0.75s step-end infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-welcome__text {
+    border-right: none;
+  }
+}
+
+/* === PARTICLES CONTAINER === */
+
+.gate-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gate-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--bone-white);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gate-particle {
+    animation: particle-float 8s linear infinite;
+  }
+
+  .gate-particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 10s; }
+  .gate-particle:nth-child(2) { left: 20%; animation-delay: 1s; animation-duration: 8s; }
+  .gate-particle:nth-child(3) { left: 30%; animation-delay: 2s; animation-duration: 12s; }
+  .gate-particle:nth-child(4) { left: 40%; animation-delay: 0.5s; animation-duration: 9s; }
+  .gate-particle:nth-child(5) { left: 50%; animation-delay: 1.5s; animation-duration: 11s; }
+  .gate-particle:nth-child(6) { left: 60%; animation-delay: 2.5s; animation-duration: 7s; }
+  .gate-particle:nth-child(7) { left: 70%; animation-delay: 0.8s; animation-duration: 10s; }
+  .gate-particle:nth-child(8) { left: 80%; animation-delay: 1.8s; animation-duration: 8s; }
+  .gate-particle:nth-child(9) { left: 90%; animation-delay: 2.2s; animation-duration: 9s; }
+  .gate-particle:nth-child(10) { left: 15%; animation-delay: 3s; animation-duration: 11s; }
+  .gate-particle:nth-child(11) { left: 25%; animation-delay: 0.3s; animation-duration: 10s; }
+  .gate-particle:nth-child(12) { left: 35%; animation-delay: 1.3s; animation-duration: 8s; }
+  .gate-particle:nth-child(13) { left: 45%; animation-delay: 2.3s; animation-duration: 12s; }
+  .gate-particle:nth-child(14) { left: 55%; animation-delay: 0.7s; animation-duration: 9s; }
+  .gate-particle:nth-child(15) { left: 65%; animation-delay: 1.7s; animation-duration: 7s; }
+  .gate-particle:nth-child(16) { left: 75%; animation-delay: 2.7s; animation-duration: 10s; }
+  .gate-particle:nth-child(17) { left: 85%; animation-delay: 0.4s; animation-duration: 11s; }
+  .gate-particle:nth-child(18) { left: 95%; animation-delay: 1.4s; animation-duration: 8s; }
+  .gate-particle:nth-child(19) { left: 5%; animation-delay: 2.4s; animation-duration: 9s; }
+  .gate-particle:nth-child(20) { left: 50%; animation-delay: 3.5s; animation-duration: 10s; }
+}
+
+/* Gold particles */
+.gate-particle:nth-child(3n) {
+  background: var(--spectral-gold);
+  width: 2px;
+  height: 2px;
+}
+
+/* Green particles (rare) */
+.gate-particle:nth-child(7n) {
+  background: var(--ectoplasm);
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 4px var(--glow-green);
+}
+
+/* === FOG LAYER === */
+
+.gate-fog {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 30% 80%, var(--fog-dense) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, var(--fog-dense) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(240, 235, 227, 0.15) 0%, transparent 40%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+  .gates-wrapper {
+    max-width: 90%;
+    height: 50vh;
+  }
+
+  .gate-welcome__text {
+    font-size: var(--text-2xl);
+  }
+
+  .gate-skip {
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .gate-welcome__text {
+    font-size: var(--text-xl);
+  }
+}
