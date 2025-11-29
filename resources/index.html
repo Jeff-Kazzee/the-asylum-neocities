@@ -192,7 +192,7 @@
         
         <template x-if="!loading && (activeCategory === 'all' || activeCategory === 'education') && getResourcesByCategory('education').length > 0">
           <div class="category-section">
-            <div class="category-header"><span class="category-icon" aria-hidden="true">📖</span><h2 class="text-section">Educational Resources</h2></div>
+            <div class="category-header"><svg class="icon--lg icon--gold" aria-hidden="true"><use href="../assets/svg/icons.svg#icon-education"/></svg><h2 class="text-section">Educational Resources</h2></div>
             <p class="category-description">Where knowledge flows freely.</p>
             <div class="resources-grid">
               <template x-for="resource in getResourcesByCategory('education')" :key="resource.id">
@@ -208,7 +208,7 @@
         
         <template x-if="!loading && (activeCategory === 'all' || activeCategory === 'coding') && getResourcesByCategory('coding').length > 0">
           <div class="category-section">
-            <div class="category-header"><span class="category-icon" aria-hidden="true">⚙️</span><h2 class="text-section">Coding Tools</h2></div>
+            <div class="category-header"><svg class="icon--lg icon--gold" aria-hidden="true"><use href="../assets/svg/icons.svg#icon-coding"/></svg><h2 class="text-section">Coding Tools</h2></div>
             <p class="category-description">The instruments of creation.</p>
             <div class="resources-grid">
               <template x-for="resource in getResourcesByCategory('coding')" :key="resource.id">
@@ -224,7 +224,7 @@
         
         <template x-if="!loading && (activeCategory === 'all' || activeCategory === 'design') && getResourcesByCategory('design').length > 0">
           <div class="category-section">
-            <div class="category-header"><span class="category-icon" aria-hidden="true">🎨</span><h2 class="text-section">Design Tools</h2></div>
+            <div class="category-header"><svg class="icon--lg icon--gold" aria-hidden="true"><use href="../assets/svg/icons.svg#icon-design"/></svg><h2 class="text-section">Design Tools</h2></div>
             <p class="category-description">From vision to reality.</p>
             <div class="resources-grid">
               <template x-for="resource in getResourcesByCategory('design')" :key="resource.id">
@@ -240,7 +240,7 @@
         
         <template x-if="!loading && (activeCategory === 'all' || activeCategory === 'ui') && getResourcesByCategory('ui').length > 0">
           <div class="category-section">
-            <div class="category-header"><span class="category-icon" aria-hidden="true">✨</span><h2 class="text-section">UI/CSS Resources</h2></div>
+            <div class="category-header"><svg class="icon--lg icon--gold" aria-hidden="true"><use href="../assets/svg/icons.svg#icon-ui"/></svg><h2 class="text-section">UI/CSS Resources</h2></div>
             <p class="category-description">Components and inspiration.</p>
             <div class="resources-grid">
               <template x-for="resource in getResourcesByCategory('ui')" :key="resource.id">
